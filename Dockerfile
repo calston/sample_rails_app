@@ -31,9 +31,9 @@ RUN yarn install
 
 RUN bundle install
 
-RUN bundle exec rails assets:precompile
-
 COPY . /sample_rails_application
+
+RUN bundle exec rails assets:precompile
 
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
